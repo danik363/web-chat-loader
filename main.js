@@ -1,10 +1,10 @@
 (async function () {
     try {
         const res = await fetch(
-            'https://cdn.jsdelivr.net/gh/danik363/web-chat-loader@main/config.json?t=' + Date.now()
+            'https://docs.google.com/spreadsheets/d/1fa3204hF3grsAIzXKsD0cggI87oC_zrKWNnwX8AQdpQ/export?format=csv&t=' + Date.now()
         );
-
-        const { channel } = await res.json();
+        const text = await res.text();
+        const channel = text.split(/[\r\n,]+/)[0].trim();
         if (!channel) return;
 
         if (document.getElementById('livechat')) return;
