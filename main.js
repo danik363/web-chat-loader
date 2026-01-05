@@ -4,7 +4,7 @@
             'https://docs.google.com/spreadsheets/d/1fa3204hF3grsAIzXKsD0cggI87oC_zrKWNnwX8AQdpQ/export?format=csv&t=' + Date.now()
         );
         const text = await res.text();
-        const channel = text.split(/[\r\n,]+/)[0].trim();
+        const channel = text.split(/[\r\n,]+/)[1].trim();
         if (!channel) return;
 
         if (document.getElementById('livechat')) return;
