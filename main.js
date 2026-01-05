@@ -1,7 +1,7 @@
 (async function () {
     try {
         const res = await fetch(
-            'https://cdn.jsdelivr.net/gh/danik363/web-chat-loader@main/main.js?t=' + Date.now()
+            'https://cdn.jsdelivr.net/gh/danik363/web-chat-loader@main/config.json?t=' + Date.now()
         );
 
         const { channel } = await res.json();
